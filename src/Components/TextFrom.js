@@ -5,6 +5,7 @@ import {HexColorPicker} from 'react-colorful'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { useReactToPrint } from 'react-to-print';
 
+
 let a="";
 export default function TextFrom(props) {
 
@@ -18,6 +19,8 @@ export default function TextFrom(props) {
   const [bgcolor, setbgColor] = useState("white");
   const [tareaWidth,setTareaWidth]=useState();
   const [tareaHeight,setTareaHeight]=useState();
+  const [tareaBsize,setTareabsize]=useState(".5cm");
+  const [tareapadding,setTareapadding]=useState(".5cm");
   
   
   let size; 
@@ -32,9 +35,7 @@ export default function TextFrom(props) {
       setTareaHeight(textelement.contentRect.height)
       
     })
-    
-    
-    Tsize.observe(size) }
+Tsize.observe(size) }
     , 500);
   
   
@@ -142,12 +143,14 @@ let borderStyle=(e)=>{                         // function for BORDER STYLE
 }
 let borderWidth=(e)=>{                       // function for BORDER WIDTH
   document.getElementById("Textarea1").style.borderWidth=e.target.innerText;
+  setTareabsize(e.target.innerText);
 }
-let borderRadious=(e)=>{                     // function for BORDER WIDTH
+let borderRadious=(e)=>{                     // function for BORDER RADIOUS
   document.getElementById("Textarea1").style.borderRadius=e.target.innerText;
 }
-let bgpadding=(e)=>{                         // function for BORDER WIDTH
+let bgpadding=(e)=>{                         // function for TEXTAREA PADDING
   document.getElementById("Textarea1").style.padding=e.target.innerText;
+  setTareapadding(e.target.innerText);
 }
 let speech=()=>{  
                                // function for  SPEECH TO TEXT START
@@ -174,10 +177,10 @@ let addItem=()=>{                 // function for  ADDING THE TEXT TO PRINT
 return(
     <>
     <div className='textButton'>
+      
                 <div className='printdiv' ref={printdiv} id='printdiv'></div>
-                <h1>{props.heading}</h1>
-                <div className="mb-3">
-                <textarea ref={Tsize} className="mainText" onChange={changedupper} style={{color:color, borderColor:bcolor, backgroundColor:bgcolor, width:"10cm", height:"4cm"}} id="Textarea1" placeholder={transcript} value={text}></textarea>
+                <div className="optionsdiv">
+                <textarea  className="mainText" onChange={changedupper} style={{color:color, borderColor:bcolor, backgroundColor:bgcolor, width:"10cm", height:"4cm"}} id="Textarea1" placeholder={transcript} value={text}></textarea>
 
                 </div>
 
@@ -186,7 +189,7 @@ return(
                 <button className="btn btn-primary mx-1 " onClick={stopSpeech}>Stop speaking</button>
                 <button className="btn btn-primary mx-1 " onClick={addItem}>Add</button>
                 <button className="btn btn-primary mx-1" onClick={erase}>Reset </button>
-                <button className="btn btn-primary mx-1" onClick={handlePrint}>Print</button>
+                <button className="btn btn-primary mx-1" onClick={handlePrint}>Print / Save</button>
                 </div>
                 <div>
                 
@@ -316,11 +319,12 @@ return(
     </div>
 
   <div id="p"> <h3>Size</h3>
-  <b>Height:</b> {tareaHeight} <br></br><b>Width</b>: {tareaWidth}   </div>
+  <b>Height:</b> {tareaHeight} <br></br><b>Width</b>: {tareaWidth}  </div>
   </div>
     <div className='my-3' >
       <h3>Text Summory</h3> Characters- {text.length}, Words - {text.split(" ").length}, Time to read- {0.008*text.length}</div>
   </div>
+  
    
  </> 
   )

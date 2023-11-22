@@ -1,14 +1,14 @@
 .mainText{
     display: inline-block; 
-    padding: 1pc ;
+    padding: .5cm ;
     background-color: white;
     resize: both;
     font-size: .5in; 
     align-items: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    border-width: 1pc;
-    border-radius: 1pc;
+    border-width: .5cm;
+    border-radius: 1cm;
     border-color: blue;
     border-style: double;
     
@@ -24,6 +24,17 @@
     position: absolute;
     right:.5cm;
     background: white;
+   
 
   }
-  
+  .optionsdiv{
+    left:0px;
+    background-color: aqua;
+  }
+  .textButton{
+      background-color: aqua;
+      margin-left: 0%;
+      height:31.7cm ;
+      width: 100%;
+      left:0%;
+  }
