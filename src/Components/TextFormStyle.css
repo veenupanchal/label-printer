@@ -1,0 +1,29 @@
+.mainText{
+    display: inline-block; 
+    padding: 1pc ;
+    background-color: white;
+    resize: both;
+    font-size: .5in; 
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    border-width: 1pc;
+    border-radius: 1pc;
+    border-color: blue;
+    border-style: double;
+    
+  }
+  .printTextarea{
+  background-color: bisque;
+  position: relative;
+  }
+  .printdiv{
+  
+    height:29.7cm ;
+    width:20.5cm;
+    position: absolute;
+    right:.5cm;
+    background: white;
+
+  }
+  
