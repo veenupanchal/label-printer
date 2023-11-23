@@ -5,7 +5,6 @@ import {HexColorPicker} from 'react-colorful'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { useReactToPrint } from 'react-to-print';
 
-
 let a="";
 export default function TextFrom(props) {
 
@@ -177,7 +176,8 @@ let addItem=()=>{                 // function for  ADDING THE TEXT TO PRINT
 return(
     <>
     <div className='textButton'>
-      
+
+                
                 <div className='printdiv' ref={printdiv} id='printdiv'></div>
                 <div className="optionsdiv">
                 <textarea  className="mainText" onChange={changedupper} style={{color:color, borderColor:bcolor, backgroundColor:bgcolor, width:"10cm", height:"4cm"}} id="Textarea1" placeholder={transcript} value={text}></textarea>
