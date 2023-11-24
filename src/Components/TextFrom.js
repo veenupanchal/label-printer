@@ -159,16 +159,18 @@ let speech=()=>{
 let stopSpeech=()=>{            // function for  SPEECH TO TEXT STOP
   setText(transcript); 
   SpeechRecognition.stopListening();
+  speaking=false;
   
 } 
 let addItem=()=>{                 // function for  ADDING THE TEXT TO PRINT
-
+  setText("");
   let x = document.getElementById("Textarea1").cloneNode();
   x.id = "lol";
   x.disabled=true;
   x.style.resize="none";
   x.style.overflow="hidden";
   document.getElementById("printdiv").appendChild(x)
+  
 
 }
 
