@@ -4,10 +4,10 @@ import './TextFormStyle.css'
 import {HexColorPicker} from 'react-colorful'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { useReactToPrint } from 'react-to-print';
-
+let speaking;
 let a="";
 export default function TextFrom(props) {
-
+  
   let newText="";
   const [text, setText]=useState("");
   const [boldState, setBold]=useState(1);
@@ -152,7 +152,7 @@ let bgpadding=(e)=>{                         // function for TEXTAREA PADDING
   setTareapadding(e.target.innerText);
 }
 let speech=()=>{  
-                               // function for  SPEECH TO TEXT START
+  speaking=true;                 // function for  SPEECH TO TEXT START
   SpeechRecognition.startListening(); 
 }
 
@@ -175,25 +175,25 @@ let addItem=()=>{                 // function for  ADDING THE TEXT TO PRINT
 
 return(
     <>
+     
     <div className='textButton'>
 
                 
-                <div className='printdiv' ref={printdiv} id='printdiv'></div>
+   
+
                 <div className="optionsdiv">
-                <textarea  className="mainText" onChange={changedupper} style={{color:color, borderColor:bcolor, backgroundColor:bgcolor, width:"10cm", height:"4cm"}} id="Textarea1" placeholder={transcript} value={text}></textarea>
-
-                </div>
-
-                <div>
-                <button className="btn btn-primary mx-1 " onClick={speech}>Start speaking</button>
-                <button className="btn btn-primary mx-1 " onClick={stopSpeech}>Stop speaking</button>
-                <button className="btn btn-primary mx-1 " onClick={addItem}>Add</button>
-                <button className="btn btn-primary mx-1" onClick={erase}>Reset </button>
-                <button className="btn btn-primary mx-1" onClick={handlePrint}>Print / Save</button>
+                <textarea  className="mainText" onChange={changedupper} style={{color:color, borderColor:bcolor, backgroundColor:bgcolor, width:"13.7cm", height:"4cm"}} id="Textarea1" placeholder={speaking===true?transcript:"Enter your text here"} value={text}></textarea>
+                <div className='my-3'>
+                <div >
+                <button className="btn btn-info mx-1 my-1 " onClick={speech}>Start speaking</button>
+                <button className="btn btn-info mx-1 " onClick={stopSpeech}>Stop speaking</button>
+                <button className="btn btn-info mx-1 " onClick={addItem}>Add</button>
+                <button className="btn btn-info mx-1" onClick={erase}>Reset </button>
+                <button className="btn btn-info mx-1" onClick={handlePrint}>Print or Save</button>
                 </div>
                 <div>
                 
-                <button className="btn btn-primary mx-1 my-3" onClick={uppercase}>ABC</button>
+                <button className="btn btn-primary mx-1 my-1" onClick={uppercase}>ABC</button>
                 <button className="btn btn-primary mx-1" onClick={lowercase}>abc</button>
                 <button className="btn btn-primary mx-1" onClick={titlecase}>Abc</button>
                 <button className="btn btn-primary mx-1" type="button" data-bs-toggle="dropdown" aria-expanded="false"> Size</button> 
@@ -242,7 +242,7 @@ return(
     </div>
     <div>
                   <div className="borderButton">
-                  <button className="btn btn-success mx-1" type="button" data-bs-toggle="dropdown" aria-expanded="false"> Border Width </button> 
+                  <button className="btn btn-success mx-1 my-1" type="button" data-bs-toggle="dropdown" aria-expanded="false"> Border Width </button> 
                   <ul className="dropdown-menu">
                   <li><a className="dropdown-item"  onClick={borderWidth}>.3cm</a></li>
                   <li><a className="dropdown-item" onClick={borderWidth}>.5cm</a></li>
@@ -291,14 +291,14 @@ return(
                
     </div>
     <div className="textareas">
-                <button className="btn btn-warning mx-1 my-3" type="button" data-bs-toggle="dropdown" aria-expanded="false" >Background Color</button>
+                <button className="btn btn-warning mx-1 my-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" >Background Color</button>
                 <div className="dropdown-menu">
                 <HexColorPicker color={bgcolor} onChange={setbgColor} /></div>                  
-                  <button className="btn btn-warning mx-1 my-3" type="button" data-bs-toggle="dropdown" aria-expanded="false" >Background size</button>
+                  <button className="btn btn-warning mx-1 my-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" >Background size</button>
                   <ul className="dropdown-menu">
                   <li><a className="dropdown-item">Drag the corner</a></li>
                   </ul>
-                  <button className="btn btn-warning mx-1 my-3" type="button" data-bs-toggle="dropdown" aria-expanded="false" >Background text padding</button>
+                  <button className="btn btn-warning mx-1 my-1" type="button" data-bs-toggle="dropdown" aria-expanded="false" >Background text padding</button>
                   <ul className="dropdown-menu">
                   <li><a className="dropdown-item" onClick={bgpadding}>.02cm</a></li>
                   <li><a className="dropdown-item" onClick={bgpadding}>.05cm</a></li>
@@ -317,6 +317,7 @@ return(
 
                 </ul> 
     </div>
+    </div>
 
   <div id="p"> <h3>Size</h3>
   <b>Height:</b> {tareaHeight} <br></br><b>Width</b>: {tareaWidth}  </div>
@@ -324,8 +325,8 @@ return(
     <div className='my-3' >
       <h3>Text Summory</h3> Characters- {text.length}, Words - {text.split(" ").length}, Time to read- {0.008*text.length}</div>
   </div>
-  
-   
+  <div className='printdiv' ref={printdiv} id='printdiv'></div>
+  </div>
  </> 
   )
   

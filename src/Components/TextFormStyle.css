@@ -11,30 +11,42 @@
     border-radius: 1cm;
     border-color: blue;
     border-style: double;
+    left:0%;
+    max-width: 20cm;
+    max-height:28.5cm ;
     
   }
-  .printTextarea{
-  background-color: bisque;
-  position: relative;
-  }
+  
   .printdiv{
   
     height:29.7cm ;
-    width:20.5cm;
-    position: absolute;
+    width:21cm;
+   
     right:.5cm;
     background: white;
-   
+    overflow: hidden;
+    padding-top: .5cm;
+    padding-left: .5cm;
+    padding-bottom: .5cm;
+    padding-right: .5cm;
 
   }
   .optionsdiv{
     left:0px;
-    background-color: rgba(0, 255, 255, 0);
+    
   }
   .textButton{
       background-color: rgba(0, 255, 255, 0);
       margin-left: 0%;
       height:31.7cm ;
       width: 100%;
-      left:0%;  
+      left:0%; 
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-around; 
+  }
+  ::placeholder{
+    color: rgba(128, 128, 128, 0.385);
+    font-family: sans-serif;
   }
