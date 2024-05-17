@@ -203,6 +203,9 @@ return(
                 <ul className="dropdown-menu">
                   <li><a className="dropdown-item" onClick={fontSize}>1cm</a></li>
                   <li><a className="dropdown-item" onClick={fontSize}>2cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>2.5cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>3cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>3.5cm</a></li>
                   <li><a className="dropdown-item" onClick={fontSize}>4cm</a></li>
                   <li><a className="dropdown-item" onClick={fontSize}>6cm</a></li>
                   <li><a className="dropdown-item" onClick={bgpadding}>8cm</a></li>
