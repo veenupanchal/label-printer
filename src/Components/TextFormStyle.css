@@ -7,14 +7,14 @@
     align-items: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    border-width: .5cm;
+    border-width: .3cm;
     border-radius: 1cm;
     border-color: blue;
-    border-style: double;
+    border-style: solid;
 	margin: 0.4cm;
     left:0%;
     max-width: 20cm;
-    max-height:28.5cm ;
+    max-height:28.7cm ;
     
   }
   

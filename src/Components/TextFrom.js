@@ -162,7 +162,7 @@ let stopSpeech=()=>{            // function for  SPEECH TO TEXT STOP
   speaking=false;
   
 } 
-let addItem=()=>{                 // function for  ADDING THE TEXT TO PRINT
+let addItem=()=>{                 // function for  ADDING THE TEXT TO PRINT APPEND
   setText("");
   let x = document.getElementById("Textarea1").cloneNode();
   x.id = "lol";
@@ -184,7 +184,7 @@ return(
    
 
                 <div className="optionsdiv">
-                <textarea  className="mainText" onChange={changedupper} style={{color:color, borderColor:bcolor, backgroundColor:bgcolor, width:"13.7cm", height:"4cm"}} id="Textarea1" placeholder={speaking===true?transcript:"Enter your text here"} value={text}></textarea>
+                <textarea  className="mainText" onChange={changedupper} style={{color:color, borderColor:bcolor, backgroundColor:bgcolor, width:"13.7cm", height:"3.6cm"}} id="Textarea1" placeholder={speaking===true?transcript:"Enter your text here"} value={text}></textarea>
                 <div className='my-3'>
                 <div >
                 <button className="btn btn-info mx-1 my-1 " onClick={speech}>Start speaking</button>
@@ -201,14 +201,30 @@ return(
                 <button className="btn btn-primary mx-1" type="button" data-bs-toggle="dropdown" aria-expanded="false"> Size</button> 
                 
                 <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" onClick={fontSize}>.5cm</a></li>
                   <li><a className="dropdown-item" onClick={fontSize}>1cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>1.2cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>1.5cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>1.8cm</a></li>
                   <li><a className="dropdown-item" onClick={fontSize}>2cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>2.2cm</a></li>
                   <li><a className="dropdown-item" onClick={fontSize}>2.5cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>2.8cm</a></li>
                   <li><a className="dropdown-item" onClick={fontSize}>3cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>3.2cm</a></li>
                   <li><a className="dropdown-item" onClick={fontSize}>3.5cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>3.8cm</a></li>
                   <li><a className="dropdown-item" onClick={fontSize}>4cm</a></li>
+
+                  <li><a className="dropdown-item" onClick={fontSize}>4.2cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>4.5cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>4.8cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>5cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>5.2cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>5.5cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>5.8cm</a></li>
                   <li><a className="dropdown-item" onClick={fontSize}>6cm</a></li>
-                  <li><a className="dropdown-item" onClick={bgpadding}>8cm</a></li>
+                  <li><a className="dropdown-item" onClick={fontSize}>8cm</a></li>
                   <li><a className="dropdown-item" onClick={fontSize}>10cm</a></li>
                   <li><a className="dropdown-item" onClick={fontSize}>12cm</a></li>
                   <li><a className="dropdown-item" onClick={fontSize}>14cm</a></li>
