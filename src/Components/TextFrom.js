@@ -265,6 +265,8 @@ return(
                   <div className="borderButton">
                   <button className="btn btn-success mx-1 my-1" type="button" data-bs-toggle="dropdown" aria-expanded="false"> Border Width </button> 
                   <ul className="dropdown-menu">
+                  <li><a className="dropdown-item"  onClick={borderWidth}>.05cm</a></li>
+                  <li><a className="dropdown-item"  onClick={borderWidth}>.1cm</a></li>
                   <li><a className="dropdown-item"  onClick={borderWidth}>.3cm</a></li>
                   <li><a className="dropdown-item" onClick={borderWidth}>.5cm</a></li>
                   <li><a className="dropdown-item" onClick={borderWidth}>.8cm</a></li>
