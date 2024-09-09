@@ -177,10 +177,18 @@ let addItem=()=>{                 // function for  ADDING THE TEXT TO PRINT APPE
 
 return(
     <>
-     
+    <div className="landing" style={{backgroundColor:"black"}}>
+     <nav className="navbar " style={{marginTop:"0%"}}>
+  <div className="container-fluid">
+    <form className="d-flex" role="search">
+      <input className="form-control me-4" type="search" placeholder="Search" aria-label="Search"></input>
+      <button className="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
     <div className='textButton'>
 
-                
+    
    
 
                 <div className="optionsdiv">
@@ -349,6 +357,7 @@ return(
       <h3>Text Summory</h3> Characters- {text.length}, Words - {text.split(" ").length}, Time to read- {0.008*text.length}</div>
   </div>
   <div className='printdiv' ref={printdiv} id='printdiv'></div>
+  </div>
   </div>
  </> 
   )
