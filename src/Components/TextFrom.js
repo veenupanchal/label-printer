@@ -177,7 +177,7 @@ let addItem=()=>{                 // function for  ADDING THE TEXT TO PRINT APPE
 
 return(
     <>
-    <div className="landing" style={{backgroundColor:"black"}}>
+    <div className="landing">
      <nav className="navbar " style={{marginTop:"0%"}}>
   <div className="container-fluid">
     <form className="d-flex" role="search">
